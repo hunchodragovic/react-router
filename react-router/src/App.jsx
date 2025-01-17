@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -10,6 +15,9 @@ import OrderSummary from "./components/OrderSummary";
 import Products from "./components/Products";
 import Featured from "./components/Featured";
 import New from "./components/New";
+import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
+import AdminDetails from "./components/AdminDetails";
 
 const App = () => {
   return (
@@ -21,6 +29,7 @@ const App = () => {
           element={
             <>
               <Header /> <Home />
+              <Users />
             </>
           }
         />
@@ -32,6 +41,10 @@ const App = () => {
           <Route index element={<Featured />} />
           <Route path="featured" element={<Featured />} />
           <Route path="new" element={<New />} />
+        </Route>
+        <Route path="/users" element={<Users />}>
+          <Route path=":userId" element={<UserDetails />} />
+          <Route path="admin" element={<AdminDetails />} />
         </Route>
       </Routes>
     </Router>
