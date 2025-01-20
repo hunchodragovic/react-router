@@ -44,7 +44,7 @@ const App = () => {
         </Route>
         <Route path="/users" element={<Users />}>
           <Route path=":userId" element={<UserDetails />} />
-          <Route path="admin" element={<AdminDetails />} />
+          <Route path="admi" element={<AdminDetails />} />
         </Route>
       </Routes>
     </Router>
