@@ -1,11 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import { useParams } from "react-router-dom";
 const UserDetails = () => {
-  return (
-    <div>
-    detaikls
-    </div>
-  )
-}
+  const params = useParams()
+  const userId = params.userId
+  return <div>Userdetails about {userId}</div>;
+};
 
-export default UserDetails
+export default UserDetails;
